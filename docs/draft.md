@@ -25,4 +25,8 @@ language for the new application stacks
     
 Auto scale service ?
 
-### Pulumi crosswalk for AWS
+# Web static layer
+- Amazon S3 is used to store the website's contents.
+- Amazon CloudFront is the CDN serving content.
+- Amazon Route53 is used to set up the DNS for the website.
+- Amazon Certificate Manager is used for securing things via HTTPS.

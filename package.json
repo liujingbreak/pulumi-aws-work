@@ -1,11 +1,17 @@
 {
     "name": "aws-demo",
     "devDependencies": {
-        "@types/node": "^10.0.0"
+        "@types/node": "^10.0.0",
+        "tslint": "^5.9.1",
+        "tslint-eslint-rules": "^4.1.1"
     },
     "dependencies": {
         "@pulumi/pulumi": "^2.0.0",
         "@pulumi/aws": "^2.0.0",
         "@pulumi/awsx": "^0.20.0"
+    },
+    "scripts": {
+        "export-stack:dev": "pulumi stack export --show-secrets --file dev.checkpoint.json",
+        "import-stack:dev": "pulumi stack import --file dev.checkpoint.json"
     }
 }
