@@ -10,7 +10,17 @@
         "pretty": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitAny": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"emitDecoratorMetadata": true,
+		"noUnusedLocals": true,
+		"preserveSymlinks": false,
+		"downlevelIteration": false,
+		"strictNullChecks": true,
+		"resolveJsonModule": true,
     },
     "files": [
         "index.ts"

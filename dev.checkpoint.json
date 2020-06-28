@@ -2,9 +2,9 @@
     "version": 3,
     "deployment": {
         "manifest": {
-            "time": "2020-06-28T01:56:19.8780776+08:00",
-            "magic": "e40dbc2dac479e18b8e1452207e6f75742cda9f89e2282dbe01737c9ad70bae9",
-            "version": "v2.4.0"
+            "time": "2020-06-29T01:51:55.003461+08:00",
+            "magic": "9aab65029803bad8fc6f80b2d5e309b7c46bd0fd15952870e7450a2d380d1bf2",
+            "version": "v2.5.0"
         },
         "secrets_providers": {
             "type": "passphrase",
@@ -18,18 +18,20 @@
                 "custom": false,
                 "type": "pulumi:pulumi:Stack",
                 "outputs": {
-                    "bucket": {
+                    "bucketName": "demobucket-eb51131",
+                    "bucketWebsiteEndpoint": "demobucket-eb51131.s3-website-ap-southeast-1.amazonaws.com",
+                    "contentBucket": {
                         "accelerationStatus": "",
-                        "acl": "private",
-                        "arn": "arn:aws:s3:::demobucket-9db9913",
-                        "bucket": "demobucket-9db9913",
-                        "bucketDomainName": "demobucket-9db9913.s3.amazonaws.com",
-                        "bucketRegionalDomainName": "demobucket-9db9913.s3.ap-southeast-1.amazonaws.com",
+                        "acl": "public-read",
+                        "arn": "arn:aws:s3:::demobucket-eb51131",
+                        "bucket": "demobucket-eb51131",
+                        "bucketDomainName": "demobucket-eb51131.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "demobucket-eb51131.s3.ap-southeast-1.amazonaws.com",
                         "corsRules": [],
                         "forceDestroy": false,
                         "grants": [],
                         "hostedZoneId": "Z3O0J2DXBE1FTB",
-                        "id": "demobucket-9db9913",
+                        "id": "demobucket-eb51131",
                         "lifecycleRules": [],
                         "loggings": [],
                         "objectLockConfiguration": null,
@@ -37,18 +39,48 @@
                         "replicationConfiguration": null,
                         "requestPayer": "BucketOwner",
                         "serverSideEncryptionConfiguration": null,
-                        "tags": {
-                            "Environment": "Dev",
-                            "Name": "My bucket"
+                        "tags": {},
+                        "urn": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demobucket",
+                        "versioning": {
+                            "enabled": false,
+                            "mfaDelete": false
                         },
-                        "urn": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demoBucket",
+                        "website": {
+                            "errorDocument": "",
+                            "indexDocument": "index.html",
+                            "redirectAllRequestsTo": "",
+                            "routingRules": ""
+                        },
+                        "websiteDomain": "s3-website-ap-southeast-1.amazonaws.com",
+                        "websiteEndpoint": "demobucket-eb51131.s3-website-ap-southeast-1.amazonaws.com"
+                    },
+                    "logsBucket": {
+                        "accelerationStatus": "",
+                        "acl": "private",
+                        "arn": "arn:aws:s3:::test.aws-demo-logs",
+                        "bucket": "test.aws-demo-logs",
+                        "bucketDomainName": "test.aws-demo-logs.s3.amazonaws.com",
+                        "bucketRegionalDomainName": "test.aws-demo-logs.s3.ap-southeast-1.amazonaws.com",
+                        "corsRules": [],
+                        "forceDestroy": false,
+                        "grants": [],
+                        "hostedZoneId": "Z3O0J2DXBE1FTB",
+                        "id": "test.aws-demo-logs",
+                        "lifecycleRules": [],
+                        "loggings": [],
+                        "objectLockConfiguration": null,
+                        "region": "ap-southeast-1",
+                        "replicationConfiguration": null,
+                        "requestPayer": "BucketOwner",
+                        "serverSideEncryptionConfiguration": null,
+                        "tags": {},
+                        "urn": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::requestLogs",
                         "versioning": {
                             "enabled": false,
                             "mfaDelete": false
                         },
                         "website": null
-                    },
-                    "bucketName": "demobucket-9db9913"
+                    }
                 }
             },
             {
@@ -66,36 +98,30 @@
                 }
             },
             {
-                "urn": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demoBucket",
+                "urn": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::requestLogs",
                 "custom": true,
-                "id": "demobucket-9db9913",
+                "id": "test.aws-demo-logs",
                 "type": "aws:s3/bucket:Bucket",
                 "inputs": {
                     "__defaults": [
-                        "bucket",
                         "forceDestroy"
                     ],
                     "acl": "private",
-                    "bucket": "demobucket-9db9913",
-                    "forceDestroy": false,
-                    "tags": {
-                        "Environment": "Dev",
-                        "Name": "My bucket",
-                        "__defaults": []
-                    }
+                    "bucket": "test.aws-demo-logs",
+                    "forceDestroy": false
                 },
                 "outputs": {
                     "accelerationStatus": "",
                     "acl": "private",
-                    "arn": "arn:aws:s3:::demobucket-9db9913",
-                    "bucket": "demobucket-9db9913",
-                    "bucketDomainName": "demobucket-9db9913.s3.amazonaws.com",
-                    "bucketRegionalDomainName": "demobucket-9db9913.s3.ap-southeast-1.amazonaws.com",
+                    "arn": "arn:aws:s3:::test.aws-demo-logs",
+                    "bucket": "test.aws-demo-logs",
+                    "bucketDomainName": "test.aws-demo-logs.s3.amazonaws.com",
+                    "bucketRegionalDomainName": "test.aws-demo-logs.s3.ap-southeast-1.amazonaws.com",
                     "corsRules": [],
                     "forceDestroy": false,
                     "grants": [],
                     "hostedZoneId": "Z3O0J2DXBE1FTB",
-                    "id": "demobucket-9db9913",
+                    "id": "test.aws-demo-logs",
                     "lifecycleRules": [],
                     "loggings": [],
                     "objectLockConfiguration": null,
@@ -103,10 +129,7 @@
                     "replicationConfiguration": null,
                     "requestPayer": "BucketOwner",
                     "serverSideEncryptionConfiguration": null,
-                    "tags": {
-                        "Environment": "Dev",
-                        "Name": "My bucket"
-                    },
+                    "tags": {},
                     "versioning": {
                         "enabled": false,
                         "mfaDelete": false
@@ -117,7 +140,189 @@
                 "provider": "urn:pulumi:dev::aws-demo::pulumi:providers:aws::default_2_10_1::2a768a24-ad8d-426e-9374-0c3aa9e4492d",
                 "propertyDependencies": {
                     "acl": null,
-                    "tags": null
+                    "bucket": null
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demobucket",
+                "custom": true,
+                "id": "demobucket-eb51131",
+                "type": "aws:s3/bucket:Bucket",
+                "inputs": {
+                    "__defaults": [
+                        "bucket",
+                        "forceDestroy"
+                    ],
+                    "acl": "public-read",
+                    "bucket": "demobucket-eb51131",
+                    "forceDestroy": false,
+                    "website": {
+                        "__defaults": [],
+                        "indexDocument": "index.html"
+                    }
+                },
+                "outputs": {
+                    "accelerationStatus": "",
+                    "acl": "public-read",
+                    "arn": "arn:aws:s3:::demobucket-eb51131",
+                    "bucket": "demobucket-eb51131",
+                    "bucketDomainName": "demobucket-eb51131.s3.amazonaws.com",
+                    "bucketRegionalDomainName": "demobucket-eb51131.s3.ap-southeast-1.amazonaws.com",
+                    "corsRules": [],
+                    "forceDestroy": false,
+                    "grants": [],
+                    "hostedZoneId": "Z3O0J2DXBE1FTB",
+                    "id": "demobucket-eb51131",
+                    "lifecycleRules": [],
+                    "loggings": [],
+                    "objectLockConfiguration": null,
+                    "region": "ap-southeast-1",
+                    "replicationConfiguration": null,
+                    "requestPayer": "BucketOwner",
+                    "serverSideEncryptionConfiguration": null,
+                    "tags": {},
+                    "versioning": {
+                        "enabled": false,
+                        "mfaDelete": false
+                    },
+                    "website": {
+                        "errorDocument": "",
+                        "indexDocument": "index.html",
+                        "redirectAllRequestsTo": "",
+                        "routingRules": ""
+                    },
+                    "websiteDomain": "s3-website-ap-southeast-1.amazonaws.com",
+                    "websiteEndpoint": "demobucket-eb51131.s3-website-ap-southeast-1.amazonaws.com"
+                },
+                "parent": "urn:pulumi:dev::aws-demo::pulumi:pulumi:Stack::aws-demo-dev",
+                "provider": "urn:pulumi:dev::aws-demo::pulumi:providers:aws::default_2_10_1::2a768a24-ad8d-426e-9374-0c3aa9e4492d",
+                "propertyDependencies": {
+                    "acl": null,
+                    "website": null
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::test.txt",
+                "custom": true,
+                "id": "test.txt",
+                "type": "aws:s3/bucketObject:BucketObject",
+                "inputs": {
+                    "__defaults": [
+                        "forceDestroy"
+                    ],
+                    "acl": "public-read",
+                    "bucket": "demobucket-eb51131",
+                    "contentType": "text/plain",
+                    "forceDestroy": false,
+                    "key": "test.txt",
+                    "source": {
+                        "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                        "hash": "941864ff405bc4840bf18d22b37a8875fb5f7cff2792f66048ca1e04783efc6d",
+                        "path": "/Users/liujing/dr/pulumi-aws-work/artifact/www/test.txt"
+                    }
+                },
+                "outputs": {
+                    "acl": "public-read",
+                    "bucket": "demobucket-eb51131",
+                    "cacheControl": "",
+                    "contentDisposition": "",
+                    "contentEncoding": "",
+                    "contentLanguage": "",
+                    "contentType": "text/plain",
+                    "etag": "6f3a6d6e0ce5fdc494c16770d55053fa",
+                    "forceDestroy": false,
+                    "id": "test.txt",
+                    "key": "test.txt",
+                    "metadata": {},
+                    "objectLockLegalHoldStatus": "",
+                    "objectLockMode": "",
+                    "objectLockRetainUntilDate": "",
+                    "serverSideEncryption": "",
+                    "source": {
+                        "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                        "hash": "941864ff405bc4840bf18d22b37a8875fb5f7cff2792f66048ca1e04783efc6d",
+                        "path": "/Users/liujing/dr/pulumi-aws-work/artifact/www/test.txt"
+                    },
+                    "storageClass": "STANDARD",
+                    "tags": {},
+                    "versionId": "",
+                    "websiteRedirect": ""
+                },
+                "parent": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demobucket",
+                "dependencies": [
+                    "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demobucket"
+                ],
+                "provider": "urn:pulumi:dev::aws-demo::pulumi:providers:aws::default_2_10_1::2a768a24-ad8d-426e-9374-0c3aa9e4492d",
+                "propertyDependencies": {
+                    "acl": null,
+                    "bucket": [
+                        "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demobucket"
+                    ],
+                    "contentType": null,
+                    "key": null,
+                    "source": null
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket$aws:s3/bucketObject:BucketObject::index.html",
+                "custom": true,
+                "id": "index.html",
+                "type": "aws:s3/bucketObject:BucketObject",
+                "inputs": {
+                    "__defaults": [
+                        "forceDestroy"
+                    ],
+                    "acl": "public-read",
+                    "bucket": "demobucket-eb51131",
+                    "contentType": "text/html",
+                    "forceDestroy": false,
+                    "key": "index.html",
+                    "source": {
+                        "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                        "hash": "1aed5989598f53fd53b0b458fd24490c4b9466432f53a9562dc932ca3a787733",
+                        "path": "/Users/liujing/dr/pulumi-aws-work/artifact/www/index.html"
+                    }
+                },
+                "outputs": {
+                    "acl": "public-read",
+                    "bucket": "demobucket-eb51131",
+                    "cacheControl": "",
+                    "contentDisposition": "",
+                    "contentEncoding": "",
+                    "contentLanguage": "",
+                    "contentType": "text/html",
+                    "etag": "ce9e58ca623221d7d9f9e51f49eb2256",
+                    "forceDestroy": false,
+                    "id": "index.html",
+                    "key": "index.html",
+                    "metadata": {},
+                    "objectLockLegalHoldStatus": "",
+                    "objectLockMode": "",
+                    "objectLockRetainUntilDate": "",
+                    "serverSideEncryption": "",
+                    "source": {
+                        "4dabf18193072939515e22adb298388d": "c44067f5952c0a294b673a41bacd8c17",
+                        "hash": "1aed5989598f53fd53b0b458fd24490c4b9466432f53a9562dc932ca3a787733",
+                        "path": "/Users/liujing/dr/pulumi-aws-work/artifact/www/index.html"
+                    },
+                    "storageClass": "STANDARD",
+                    "tags": {},
+                    "versionId": "",
+                    "websiteRedirect": ""
+                },
+                "parent": "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demobucket",
+                "dependencies": [
+                    "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demobucket"
+                ],
+                "provider": "urn:pulumi:dev::aws-demo::pulumi:providers:aws::default_2_10_1::2a768a24-ad8d-426e-9374-0c3aa9e4492d",
+                "propertyDependencies": {
+                    "acl": null,
+                    "bucket": [
+                        "urn:pulumi:dev::aws-demo::aws:s3/bucket:Bucket::demobucket"
+                    ],
+                    "contentType": null,
+                    "key": null,
+                    "source": null
                 }
             }
         ]
